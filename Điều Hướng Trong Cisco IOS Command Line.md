@@ -1,7 +1,6 @@
 ### Hướng Dẫn Điều Hướng Trong Cisco IOS Command Line
 
-Trong bài học này, bạn sẽ học cách điều hướng và sử dụng các lệnh trong giao diện dòng lệnh của Cisco IOS. Đây là kỹ năng cơ bản nhưng rất quan trọng đối với các kỹ sư mạng. Để dễ hiểu hơn, các lệnh sẽ được hiển thị trong các khung nền đen, kèm theo kết quả đầu ra mà bạn sẽ thấy khi thực hiện các lệnh này trên thiết bị thực tế.
-
+Trong bài học này, bạn sẽ học cách điều hướng và sử dụng các lệnh trong giao diện dòng lệnh của Cisco IOS. Đây là kỹ năng cơ bản nhưng rất quan trọng đối với các kỹ sư mạng. 
 ### **Kịch Bản:**
 Bạn vừa mở hộp một router Cisco mới, kết nối cáp console, và đã cấp nguồn cho router. Router này hiện đang trong quá trình khởi động.
 

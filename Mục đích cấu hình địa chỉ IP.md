@@ -60,4 +60,35 @@ Không phải tất cả các thiết bị trong mạng đều phải cấu hìn
 - **IP Management**: Một số thiết bị không cần địa chỉ IP để hoạt động chính (ví dụ switch lớp 2) nhưng vẫn có thể cần một địa chỉ IP quản lý để bạn có thể đăng nhập và quản lý thiết bị từ xa.
 
 ### **Kết luận**:
-Không phải tất cả các thiết bị trong mạng đều cần địa chỉ IP, nhưng đối với các thiết bị cần tham gia vào quá trình giao tiếp mạng ở lớp 3 hoặc cần quản lý từ xa, việc cấu hình địa chỉ IP là cần thiết. Những thiết bị không tham gia vào quá trình này thường không cần cấu hình địa chỉ IP để hoạt động.
+Không phải tất cả các thiết bị trong mạng đều cần địa chỉ IP, nhưng đối với các thiết bị cần tham gia vào quá trình giao tiếp mạng ở lớp 3 hoặc cần quản lý từ xa, việc cấu hình địa chỉ IP là cần thiết. Những thiết bị không tham gia vào quá trình này thường không cần cấu hình địa chỉ IP để hoạt động.  
+---  
+Cấu hình địa chỉ IP trong mạng thường được thực hiện cho **từng cổng kết nối (interface)** trên thiết bị mạng. Điều này là do mỗi cổng kết nối (interface) của thiết bị có thể kết nối với một mạng hoặc subnet khác nhau, và mỗi mạng này cần một địa chỉ IP riêng biệt.
+
+### **Cấu hình cho từng cổng kết nối (Interface-specific configuration)**:
+   - **Router**: Trên router, mỗi cổng kết nối (cổng GigabitEthernet, FastEthernet, Serial, v.v.) có thể được gán một địa chỉ IP riêng. Ví dụ, cổng GigabitEthernet0/0 của router có thể được cấu hình với IP `192.168.1.1/24` để kết nối với mạng LAN A, trong khi cổng GigabitEthernet0/1 có thể được cấu hình với IP `10.0.0.1/24` để kết nối với mạng LAN B.
+   - **Switch lớp 3 (Layer 3 Switch)**: Trong trường hợp của switch lớp 3, bạn có thể cấu hình địa chỉ IP cho các giao diện VLAN hoặc các cổng vật lý cụ thể nếu switch được sử dụng để định tuyến giữa các VLAN hoặc mạng khác nhau.
+   - **Máy tính hoặc thiết bị đầu cuối**: Đối với máy tính hoặc thiết bị đầu cuối khác, địa chỉ IP thường được gán cho cổng Ethernet (hoặc Wi-Fi) của thiết bị đó. Nếu một máy tính có nhiều cổng mạng (ví dụ: Ethernet và Wi-Fi), mỗi cổng có thể được cấu hình một địa chỉ IP khác nhau tùy vào mạng mà cổng đó kết nối.
+
+### **Ví dụ minh họa**:
+Giả sử bạn có một router với hai mạng LAN khác nhau kết nối vào hai cổng GigabitEthernet:
+
+1. **Cổng GigabitEthernet0/0** kết nối với mạng LAN 1:
+   ```plaintext
+   Router(config)# interface GigabitEthernet0/0
+   Router(config-if)# ip address 192.168.1.1 255.255.255.0
+   Router(config-if)# no shutdown
+   ```
+
+2. **Cổng GigabitEthernet0/1** kết nối với mạng LAN 2:
+   ```plaintext
+   Router(config)# interface GigabitEthernet0/1
+   Router(config-if)# ip address 10.0.0.1 255.255.255.0
+   Router(config-if)# no shutdown
+   ```
+
+Trong ví dụ này, bạn đang gán địa chỉ IP cho từng cổng kết nối trên router để chúng có thể giao tiếp với các mạng khác nhau.
+
+### **Tóm lại**:
+**Cấu hình IP** là cho từng cổng kết nối (interface) trên thiết bị để thiết bị đó có thể kết nối và giao tiếp với các mạng khác nhau. Mỗi cổng kết nối có thể được gán một địa chỉ IP riêng biệt dựa trên mạng mà nó kết nối.
+
+Việc hiểu rõ rằng cấu hình IP là cho từng cổng kết nối giúp bạn quản lý và thiết kế mạng một cách chính xác và hiệu quả hơn.

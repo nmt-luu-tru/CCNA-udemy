@@ -90,5 +90,4 @@ Trong ví dụ này, bạn đang gán địa chỉ IP cho từng cổng kết n�
 
 ### **Tóm lại**:
 **Cấu hình IP** là cho từng cổng kết nối (interface) trên thiết bị để thiết bị đó có thể kết nối và giao tiếp với các mạng khác nhau. Mỗi cổng kết nối có thể được gán một địa chỉ IP riêng biệt dựa trên mạng mà nó kết nối.
-
-Việc hiểu rõ rằng cấu hình IP là cho từng cổng kết nối giúp bạn quản lý và thiết kế mạng một cách chính xác và hiệu quả hơn.
+---

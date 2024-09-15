@@ -31,7 +31,7 @@ Có thể không cấu hình địa chỉ IP cho VLAN 1 trên switch, nhưng đi
 Không cấu hình địa chỉ IP cho VLAN 1 có thể chấp nhận được trong những môi trường nhỏ, ít thay đổi, hoặc khi không cần quản lý từ xa. Tuy nhiên, trong hầu hết các mạng lớn hoặc phức tạp, việc cấu hình địa chỉ IP cho VLAN quản lý là cần thiết để duy trì khả năng quản lý và giám sát hiệu quả.
 
 ---
-##### Nếu không cấu hình IP cho switch nhưng có cấu hình IP cho các pc trong switch đó. thì các pc đó có hoạt động bình thường không?
+### Nếu không cấu hình IP cho switch nhưng có cấu hình IP cho các pc trong switch đó. thì các pc đó có hoạt động bình thường không?
 Có, các PC kết nối với switch vẫn có thể hoạt động bình thường ngay cả khi switch không được cấu hình địa chỉ IP. Điều này là do switch hoạt động chủ yếu ở lớp 2 (Layer 2) của mô hình OSI, xử lý các gói tin dựa trên địa chỉ MAC và không phụ thuộc vào địa chỉ IP để chuyển tiếp dữ liệu giữa các thiết bị trong cùng một mạng.
 
 ### Hoạt động của Switch và PC trong Mạng:

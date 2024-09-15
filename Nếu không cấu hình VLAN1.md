@@ -1,3 +1,9 @@
+VLAN1 trên switch là VLAN mặc định được cấu hình sẵn trên hầu hết các switch. VLAN (Virtual Local Area Network) là một công nghệ mạng cho phép chia mạng vật lý thành nhiều mạng ảo khác nhau, giúp cải thiện tính bảo mật và quản lý lưu lượng mạng.
+
+**VLAN1** là VLAN mà tất cả các cổng của switch đều thuộc về khi mới được khởi tạo. Nó đóng vai trò là VLAN quản lý mặc định cho các giao diện của switch, có nghĩa là khi bạn kết nối vào switch mà không có cấu hình VLAN nào khác, thiết bị của bạn sẽ thuộc về VLAN1. VLAN1 thường được sử dụng cho các giao thức quản lý mạng như CDP (Cisco Discovery Protocol), VTP (VLAN Trunking Protocol), và STP (Spanning Tree Protocol).
+
+Tuy nhiên, việc sử dụng VLAN1 cho mục đích quản lý và truyền dữ liệu không được khuyến khích trong các mạng lớn vì nó tiềm ẩn các rủi ro bảo mật. Để tăng tính bảo mật, người quản trị thường tạo và sử dụng VLAN khác cho mục đích quản lý và loại bỏ hoặc hạn chế các cổng trong VLAN1.  
+
 Có thể không cấu hình địa chỉ IP cho VLAN 1 trên switch, nhưng điều này sẽ giới hạn một số khả năng của switch, đặc biệt là trong việc quản lý và giám sát. Dưới đây là các điểm cần lưu ý nếu không cấu hình địa chỉ IP cho VLAN 1 hoặc bất kỳ VLAN quản lý nào trên switch:
 
 ### 1. **Hạn chế trong Quản Lý Từ Xa:**
